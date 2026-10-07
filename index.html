@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Unseen Japan — 日本旅行マップ</title>
+    <meta name="theme-color" content="#c8102e" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23c8102e'/></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#top"><i class="sun"></i>Unseen Japan</a>
+      <nav>
+        <a href="#map" data-i="nav1"></a><a href="#culture" data-i="nav2"></a
+        ><a href="#soon" data-i="nav3"></a>
+      </nav>
+      <button id="lang" class="pill" aria-label="Language">日本語</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <canvas id="petals"></canvas>
+        <div class="sunbig"></div>
+        <svg class="fuji" viewBox="0 0 800 220" preserveAspectRatio="none">
+          <path
+            d="M0 220V170L150 140 260 160 400 40 540 150 680 130 800 165V220Z"
+            fill="var(--ink)"
+            opacity=".9"
+          />
+          <path d="M400 40l-48 38 22-6 20 14 18-12 22 10z" fill="#fff" />
+        </svg>
+        <div class="hero-in reveal">
+          <span class="tag" data-i="tag"></span>
+          <h1 data-i="h1"></h1>
+          <p data-i="sub"></p>
+          <a href="#map" class="cta" data-i="cta"></a>
+          <ol class="steps">
+            <li data-i="s1"></li>
+            <li data-i="s2"></li>
+            <li data-i="s3"></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="map" class="wrap">
+        <div class="app">
+          <aside class="panel">
+            <div class="ph">
+              <h2 data-i="visited"></h2>
+              <b id="cnt" class="badge">0/47</b>
+            </div>
+            <input id="q" type="search" data-p="search" />
+            <div class="links">
+              <button id="all" data-i="all"></button
+              ><button id="none" data-i="none"></button>
+            </div>
+            <div id="list"></div>
+          </aside>
+          <div class="panel main">
+            <div class="tools">
+              <span data-i="theme"></span>
+              <div id="themes"></div>
+              <label class="up"
+                ><input type="file" id="photo" accept="image/*" hidden /><span
+                  data-i="photo"
+                ></span
+              ></label>
+              <input id="name" maxlength="24" data-p="name" /><label class="chk"
+                ><input type="checkbox" id="labels" checked /><span
+                  data-i="labels"
+                ></span
+              ></label>
+            </div>
+            <div class="card" id="card">
+              <small data-i="ctitle"></small>
+              <div class="row">
+                <div>
+                  <h3 data-i="mine"></h3>
+                  <p id="who"></p>
+                </div>
+                <img id="av" alt="" hidden />
+                <div class="big"><b id="num">0</b><span>/47</span></div>
+              </div>
+              <div id="grid"></div>
+              <div class="bar"><i id="fill"></i></div>
+              <div class="row sm"><b id="pct"></b><span id="of"></span></div>
+              <div class="foot">
+                <i class="sun"></i><b>Unseen Japan</b
+                ><span>unseenjapan.com</span>
+              </div>
+            </div>
+            <p class="tip" data-i="tip"></p>
+            <h4 data-i="dl"></h4>
+            <div class="dl">
+              <button data-f="png">↓ PNG</button
+              ><button data-f="jpg">↓ JPG</button
+              ><button data-f="pdf">↓ PDF</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="culture" class="wrap">
+        <h2 class="sec" data-i="cult"></h2>
+        <div class="cards" id="cultcards"></div>
+      </section>
+      <section id="soon" class="wrap">
+        <h2 class="sec" data-i="soonh"></h2>
+        <div class="soon" id="soonlist"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="fin">
+        <b class="brand"><i class="sun"></i>Unseen Japan</b>
+        <p data-i="fdesc"></p>
+      </div>
+      <svg viewBox="0 0 800 120" preserveAspectRatio="none">
+        <path
+          d="M0 120V80Q200 30 400 70T800 50V120Z"
+          fill="var(--ink)"
+          opacity=".15"
+        />
+        <path
+          d="M0 120V100Q250 60 480 95T800 85V120Z"
+          fill="var(--ink)"
+          opacity=".3"
+        />
+      </svg>
+    </footer>
+    <script src="js/data.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
